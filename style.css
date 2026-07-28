@@ -1,0 +1,739 @@
+/* =========================================
+   EL GRAN POZO AZUFRADO
+   CSS PREMIUM TURISTICO
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --primary:#0f766e;
+    --secondary:#14b8a6;
+    --dark:#062c30;
+    --light:#f8fafc;
+    --white:#ffffff;
+    --gold:#d4a373;
+    --shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+    transition:.4s;
+}
+
+.logo{
+    color:var(--white);
+    font-size:1.4rem;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:var(--white);
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:var(--gold);
+    transition:.4s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.btn-nav{
+    background:linear-gradient(135deg,var(--secondary),var(--primary));
+    padding:12px 24px;
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:var(--shadow);
+}
+
+.btn-nav:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero{
+    height:100vh;
+    background:url('../assets/images/img1.jpeg') center/cover no-repeat;
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+    rgba(0,0,0,.6),
+    rgba(0,0,0,.5)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+    padding:20px;
+    animation:fadeUp 1.2s ease;
+}
+
+.subtitle{
+    color:var(--gold);
+    font-size:1rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-size:4rem;
+    color:white;
+    margin:20px 0;
+    line-height:1.1;
+}
+
+.hero p{
+    color:#eee;
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-primary,
+.btn-secondary{
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--secondary),var(--primary));
+    color:white;
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+    transform:translateY(-5px);
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section{
+    padding:120px 8%;
+}
+
+.container{
+    max-width:1300px;
+    margin:auto;
+}
+
+.section-header{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-header span{
+    color:var(--secondary);
+    font-weight:600;
+    letter-spacing:2px;
+}
+
+.section-header h2{
+    font-size:3rem;
+    margin-top:15px;
+    color:var(--dark);
+}
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:40px;
+}
+
+.card{
+    background:white;
+    padding:50px 35px;
+    border-radius:25px;
+    box-shadow:var(--shadow);
+    transition:.4s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+}
+
+.icon{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.card h3{
+    font-size:1.8rem;
+    margin-bottom:20px;
+    color:var(--dark);
+}
+
+.card p{
+    line-height:1.9;
+    color:#555;
+}
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services{
+    background:#f1f5f9;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.service-card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.4s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+.service-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.service-card:hover img{
+    transform:scale(1.08);
+}
+
+.service-info{
+    padding:30px;
+}
+
+.service-info h3{
+    font-size:1.5rem;
+    margin-bottom:15px;
+    color:var(--dark);
+}
+
+.service-info p{
+    line-height:1.8;
+    color:#666;
+}
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery{
+    background:white;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.5s;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.04);
+}
+
+/* =========================================
+   MAP
+========================================= */
+
+.map-container{
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:var(--shadow);
+}
+
+.map-container iframe{
+    width:100%;
+    height:500px;
+    border:none;
+}
+
+/* =========================================
+   FLOATING BUTTONS
+========================================= */
+
+.floating-buttons{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:999;
+}
+
+.floating-buttons a{
+    width:65px;
+    height:65px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.floating-buttons a:hover{
+    transform:scale(1.12);
+}
+
+.floating-buttons img{
+    width:35px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+}
+
+footer h3{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+footer p{
+    color:#cbd5e1;
+    margin:10px 0;
+}
+
+.copy{
+    margin-top:25px;
+    font-size:.9rem;
+    opacity:.7;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:991px){
+
+    .navbar{
+        padding:20px 5%;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .section-header h2{
+        font-size:2.3rem;
+    }
+}
+
+@media(max-width:768px){
+
+    .hero{
+        padding:0 20px;
+    }
+
+    .hero h1{
+        font-size:2.3rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+        width:100%;
+    }
+
+    .section{
+        padding:90px 6%;
+    }
+
+    .gallery-grid img{
+        height:240px;
+    }
+
+    .floating-buttons a{
+        width:58px;
+        height:58px;
+    }
+}
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:1rem;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+
+    .section-header h2{
+        font-size:1.8rem;
+    }
+
+    .card,
+    .service-info{
+        padding:25px;
+    }
+}
+/* =========================================
+   MENU / PLATOS
+========================================= */
+
+.menu{
+    background:#f8fafc;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.menu-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+    border-left:5px solid #14b8a6;
+}
+
+.menu-card:hover{
+    transform:translateY(-8px);
+}
+
+.menu-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+    gap:15px;
+}
+
+.menu-top h3{
+    color:#062c30;
+    font-size:1.2rem;
+}
+
+.menu-top span{
+    background:#14b8a6;
+    color:white;
+    padding:8px 14px;
+    border-radius:50px;
+    font-weight:600;
+    font-size:.95rem;
+}
+
+.menu-card p{
+    color:#666;
+    line-height:1.7;
+}
+/* =========================================
+   BEBIDAS FRÍAS PREMIUM
+========================================= */
+
+.cold-drinks{
+    background:#eef8f7;
+    padding:120px 8%;
+}
+
+.cold-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.cold-card{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.cold-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+
+    background:linear-gradient(
+    90deg,
+    #14b8a6,
+    #0f766e
+    );
+}
+
+.cold-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.cold-card h3{
+    margin-bottom:25px;
+    color:#062c30;
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.cold-card ul{
+    list-style:none;
+    padding:0;
+}
+
+.cold-card li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 0;
+    border-bottom:1px dashed #ddd;
+}
+
+.cold-card li:last-child{
+    border-bottom:none;
+}
+
+.cold-card span{
+    color:#444;
+    font-weight:500;
+    font-size:1rem;
+}
+
+.cold-card strong{
+    color:#14b8a6;
+    font-size:1rem;
+    font-weight:700;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+    .cold-drinks{
+        padding:90px 6%;
+    }
+
+    .cold-card{
+        padding:25px;
+    }
+
+    .cold-card h3{
+        font-size:1.3rem;
+    }
+
+}
+.btn-order{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 18px;
+    background:linear-gradient(135deg,#14b8a6,#0f766e);
+    color:white;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    font-size:.9rem;
+}
+
+.btn-order:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 25px rgba(20,184,166,.4);
+}
+.cart{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    background:#062c30;
+    color:white;
+    padding:15px 20px;
+    border-radius:50px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    font-weight:600;
+}
+.booking-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:40px;
+  }
+  
+  .booking-form{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+  }
+  
+  .booking-form input,
+  .booking-form select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+  }
+  
+  .booking-form button{
+    background:#0f766e;
+    color:white;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+  }
+  
+  .booking-info{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+  }
+  
+  .reservation-card{
+    padding:15px;
+    border-left:4px solid #0f766e;
+    margin-bottom:10px;
+    background:#f9fafb;
+    border-radius:10px;
+  }

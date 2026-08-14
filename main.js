@@ -480,4 +480,5 @@ list.addEventListener("click", (e) => {
 
     renderReservations();
   }
+   
 });

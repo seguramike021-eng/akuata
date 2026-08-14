@@ -482,3 +482,24 @@ list.addEventListener("click", (e) => {
   }
    
 });
+const platos = document.querySelectorAll(".plato");
+
+document.getElementById("btn-todo").addEventListener("click", () => {
+    platos.forEach(plato => {
+        plato.style.display = "block";
+    });
+});
+
+document.getElementById("btn-comidas").addEventListener("click", () => {
+    platos.forEach(plato => {
+        plato.style.display =
+            plato.dataset.categoria === "comidas" ? "block" : "none";
+    });
+});
+
+document.getElementById("btn-bebidas").addEventListener("click", () => {
+    platos.forEach(plato => {
+        plato.style.display =
+            plato.dataset.categoria === "bebidas" ? "block" : "none";
+    });
+});
